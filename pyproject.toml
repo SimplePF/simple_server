@@ -1,0 +1,30 @@
+[project]
+name = "simple-server"
+version = "0.1.0"
+description = ""
+authors = []
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "simple_server", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "-v --strict-markers"
+
+[dependency-groups]
+test = [
+    "pytest (>=9.0.2,<10.0.0)",
+    "httpx (>=0.28.1,<0.29.0)"
+]
