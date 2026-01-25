@@ -26,6 +26,14 @@ poetry run python -m simple_server
 host：http://127.0.0.1  
 port：8000
 
+### 並列実行する場合
+```bash
+poetry run uvicorn simple_server:app --host 127.0.0.1 --port 8000 --workers 4
+```
+「--workers N」でプロセス数を指定します。  
+※Uvicornに存在するIssueにより、Windowsの環境ではエラーが発生します。  
+（エラーが発生してもシングルワーカープロセスは正常に動作する場合があります）
+
 ## テスト実行
 ```bash
 poetry run pytest
