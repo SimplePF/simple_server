@@ -1,5 +1,10 @@
+import logging
+
+logger = logging.getLogger(__name__)
+
 def calculate_bmi(height: float, weight: float):
     if weight == 0:
+        logger.error("Division by zero attempted with height=%s, weight=%s", height, weight)
         raise ValueError("Division by zero is not allowed")
     return round(weight / height ** 2, 2)
 
