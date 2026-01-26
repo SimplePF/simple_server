@@ -21,7 +21,7 @@ poetry install --with test
 
 ## 起動方法
 ```bash
-poetry run python -m simple_server
+poetry run simple_server
 ```
 host：http://127.0.0.1  
 port：8000
