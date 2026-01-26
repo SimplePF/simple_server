@@ -1,7 +1,7 @@
 import logging
 import uvicorn
-from . import logger_config     #root_loggerの設定を反映するため
 from fastapi import FastAPI, HTTPException
+from .logger_config import setup_logging
 from .models import PhysicalMeasurements
 from .services import calculator
 
@@ -28,7 +28,8 @@ async def calculate_bmi_endpoint(physical_measurements: PhysicalMeasurements):
         logger.warning("Calculation of BMI failed: %s", e)
         raise HTTPException(status_code=422, detail=e) from e
 
-if __name__ == "__main__":
+def main():
+    setup_logging()
     uvicorn.run(
         app=app,
         host="127.0.0.1",
@@ -36,3 +37,6 @@ if __name__ == "__main__":
         reload=False,
         log_level="info"
     )
+
+if __name__ == "__main__":
+    main()
