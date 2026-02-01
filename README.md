@@ -7,7 +7,14 @@ FastAPIを使用したシンプルなWeb APIサーバーです。
   リクエストのJSONの例：{"height":1.73 ,"weight": 65.0}
 
 ## 環境構築
+※バージョン3.13以上のPythonをインストール済みの環境では手順3から
+1. Pythonの公式サイト（https://www.python.org/downloads/） からPython（バージョン3.13以上）のインストーラーをダウンロード  
+2. インストーラーを実行し、手順に従ってPythonをインストール
+3. ターミナルで以下のコマンドを実行
 ```bash
+# poetryのインストール
+pip install poetry
+
 # クローン
 git clone <repo-url>
 cd simple_server
